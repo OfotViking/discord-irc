@@ -73,7 +73,14 @@ First you need to create a Discord bot user, which you can do by following the i
     "ircNickColor": false, // Gives usernames a color in IRC for better readability (on by default)
     // Makes the bot hide the username prefix for messages that start
     // with one of these characters (commands):
-    "commandCharacters": ["!", "."]
+    "commandCharacters": ["!", "."],
+    // Restrict command usage to discord role. Undefined commands is ignored. Useful if IRC server is private and Dircord server is public
+    "roleMappings": "disabled", // enabled/disabled. Disabled means role mappings is ignored and all commands is passed trough to the IRC server
+    "roleMapping": {
+		"!command": "Admin",
+		".example": "Staff",     
+		"!help": "everyone"
+	  }
   }
 ]
 ```
